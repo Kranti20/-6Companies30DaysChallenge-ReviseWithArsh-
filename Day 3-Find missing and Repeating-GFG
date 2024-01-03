@@ -1,0 +1,22 @@
+Class Solution{
+public:
+vector<int> findTwoElement(vector<int> arr, int n) {
+        vector<int> result(2,0);
+        for(int i=0;i<n;i++){
+            int x=abs(arr[i])-1;
+            if(arr[x]<0){
+                result[0]=x+1;
+            }
+            else{
+                arr[x]*=-1;
+            }
+        }
+        for(int i=0;i<n;i++){
+            if(arr[i]>0){
+                result[1]=i+1;
+                break;
+            }
+        }
+        return result;
+        // code here
+    }};
