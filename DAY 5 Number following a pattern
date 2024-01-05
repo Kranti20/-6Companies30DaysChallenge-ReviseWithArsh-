@@ -1,0 +1,22 @@
+#include<stack>
+class Solution{   
+public:
+    string printMinNumberForPattern(string S){
+        // code here 
+        stack<int> ans;
+        string s="";
+        for(int i=0;i<S.size();i++){
+            if(i=='D'){
+                ans.push(i);
+            }
+            else if(!ans.empty() && i=='I'){
+                while(!ans.empty()){
+                    int k=ans.pop();
+                    s.push_back(i);
+                }
+            }
+        }
+        return s;
+        
+    }
+};
